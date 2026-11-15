@@ -1,0 +1,17 @@
+{
+  "name": "mini-directory-tree",
+  "version": "0.1.0",
+  "description": "Scans a directory and outputs a JSON list of paths, types, and sizes.",
+  "type": "module",
+  "main": "src/index.js",
+  "exports": "./src/index.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {}
+}
