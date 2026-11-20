@@ -25,3 +25,10 @@ Snapshot tests for filesystem layout usually need a stable, byte-for-byte compar
 ## The awkward edge
 
 Sizes are only meaningful for regular files. Directories, symlinks, and other special files are emitted with `size: 0` on purpose: a directory's `st_size` is filesystem-dependent and would make snapshots non-portable. If you need aggregate sizes, sum the `file` entries yourself.
+
+## Performance
+
+The window keeps a bounded buffer, so `push` is constant time and memory does not
+grow with the length of the stream. `peak` and `trough` are linear in the window
+size, which is the trade that keeps `push` cheap.
+
